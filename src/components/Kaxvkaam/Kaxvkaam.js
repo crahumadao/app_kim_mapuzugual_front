@@ -27,7 +27,7 @@ function Kaxvkaam({zugun}){
         setKonlu({hemvl:''} )
         //let res = await axios.post('http://localhost:5001/api/wvzalkafe/',{xoyzugunw:konluw},{headers:headers})        
         setLoading(true)
-        let res = await axios.post('http://192.168.1.33:5001/api/wvzalkafe/',konlu,{headers:headers})        
+        let res = await axios.post(process.env.API_URL+'/api/wvzalkafe/',konlu,{headers:headers})        
         let gvlalen = {}
 
         if (res.data.data) {

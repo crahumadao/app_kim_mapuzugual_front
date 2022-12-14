@@ -29,7 +29,7 @@ function ChuchiWirintukun({zugun}){
                 console.log('GelayCemNoRume')
             }else{
                 setGvlalen(false)
-                let res = await axios.post('http://192.168.1.33:5001/api/chuchiWirintukun/',{xoyzugunw:konluw},{headers:headers})        
+                let res = await axios.post(process.env.API_URL+'/api/chuchiWirintukun/',{xoyzugunw:konluw},{headers:headers})        
                 if (res.data['code']===1){
                 var newtxipalu=res.data['wirintukunArray'].map(l=>l[2]);
                 var newWif = {id:idTxafla,zugun:konluw,graf:newtxipalu,entual:idTxafla};

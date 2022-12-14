@@ -56,7 +56,7 @@ function RulpaWirintukuwe({zugun}){
         } else{
             setWelulkan([])
           
-          let res = await axios.post('http://192.168.1.33:5001/api/rulpazugual/',konlu,{headers:headers})
+          let res = await axios.post(process.env.API_URL+'/api/rulpazugual/',konlu,{headers:headers})
           setTxipalu(res.data.rulgepalu)
         }
       };

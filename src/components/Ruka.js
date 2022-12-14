@@ -41,7 +41,7 @@ function Ruka() {
     useEffect(() => {
         const getData = async () => {
             try {
-            const res = await axios.get('http://192.168.1.33:5001/api/narvmal/metadata')  
+            const res = await axios.get(process.env.API_URL+'/api/narvmal/metadata')  
             console.log(res)
             console.log(res.data)
             setZugunMW(res.data)
