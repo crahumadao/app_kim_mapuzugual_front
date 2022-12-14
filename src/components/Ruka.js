@@ -13,7 +13,9 @@ import {images} from '../utils/objAukin'
 
 
 function Ruka() {
-  
+
+
+
   const classes = useStyles2();
   
   const [zulliafiel,setZulliafiel] = useState([true,false,false,false])
@@ -41,7 +43,10 @@ function Ruka() {
     useEffect(() => {
         const getData = async () => {
             try {
-            const res = await axios.get(process.env.API_URL+'/api/narvmal/metadata')  
+
+            console.log(process.env)    
+            console.log(process.env.REACT_APP_API_URL+'/api/narvmal/metadata')
+            const res = await axios.get(process.env.REACT_APP_API_URL+'/api/narvmal/metadata')  
             console.log(res)
             console.log(res.data)
             setZugunMW(res.data)
