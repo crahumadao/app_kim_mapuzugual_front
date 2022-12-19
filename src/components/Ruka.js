@@ -44,8 +44,6 @@ function Ruka() {
         const getData = async () => {
             try {
 
-            console.log(process.env)    
-            console.log(process.env.REACT_APP_API_URL+'/api/narvmal/metadata')
             const res = await axios.get(process.env.REACT_APP_API_URL+'/api/narvmal/metadata')  
             console.log(res)
             console.log(res.data)
