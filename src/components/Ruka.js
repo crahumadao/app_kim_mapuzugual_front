@@ -88,7 +88,11 @@ function Ruka() {
                 <Typography variant='h3' align='center' >
                     <Button  variant='contained' sx={{ backgroundColor:'black'}} onClick={handleClose}> Nürüfam / Cerrar </Button>
                 </Typography>
-                
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12}> 
+                <Typography align='center' >
+                    Gütxamkayal / Contacto: gvtxamkayal@kimalmapuzugun.cl
+                </Typography>
             </Grid>
         </Grid>
     </Backdrop>       
@@ -185,7 +189,12 @@ function Ruka() {
 
 
                 </Box>
-                
+                <Box sx={{justifyContent:'center'}}>
+                <Typography variant='h6' align='center' >
+                    Gütxamkayal / Contacto: gvtxamkayal@kimalmapuzugun.cl
+                </Typography>
+                      
+                </Box>
     </Container>:<Container sx={{width:'100%',height:'100%',display:'flex',justifyContent:'center'}}><CircularProgress/></Container>}
     
     </>
