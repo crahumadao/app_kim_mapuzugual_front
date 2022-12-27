@@ -1,6 +1,5 @@
 import React from "react";
-import {Grid,Container,Paper,Typography,Stack} from '@mui/material'
-import {borders} from '@mui/system'
+import {Grid,Container,Paper,Typography} from '@mui/material'
 
 
 function Pegelam({hemvl}) {
@@ -12,14 +11,14 @@ function Pegelam({hemvl}) {
 	return total; 
 }
 
-    const componentToHex = (c)=> {
-        var hex = c.toString(16);
-        return hex.length === 1 ? "0" + hex : hex;
-      }
+   // const componentToHex = (c)=> {
+   //     var hex = c.toString(16);
+   //     return hex.length === 1 ? "0" + hex : hex;
+   //   }
       
-    const rgbToHex = (r, g, b) => {
-        return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-      }
+//    const rgbToHex = (r, g, b) => {
+ //       return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+  //    }
 
     const colors = [
         "#17d12b",
@@ -55,8 +54,8 @@ function Pegelam({hemvl}) {
 
 
     
-    let multi =  1;
-    if (maxColumn>5) multi=2
+    //let multi =  1;
+    //if (maxColumn>5) multi=2
 
     let columns = factorial(maxColumn);
     for (let i = 0; i<hemvl.hemvlkawe.length; i++){
@@ -75,7 +74,7 @@ function Pegelam({hemvl}) {
                                         if (element.length>maxLengthWord) maxLengthWord = element.length
                                         });
                                     let tasa = Math.round(7*(maxLengthWord/maxColumn)).toString()+'px'
-                                    if (hemvl.hemvlkawe[i][3].length<=5) multi=2
+                                    //if (hemvl.hemvlkawe[i][3].length<=5) multi=2
 
                                     
 

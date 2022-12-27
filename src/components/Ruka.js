@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import Rakiam from './Rakin/Rakiam'
-import Wirintukuam from './Wirintukuam/Wirintukuam';
+import Rakiam from './Rakin/Rakiam';
+//import Wirintukuam from './Wirintukuam/Wirintukuam';
 import ChuchiWirintukun from './ChuchiWirintukun/ChuchiWirintukun';
 import RulpaWirintukuwe from './RulpaWirintukuwe/RulpaWirintukuwe';
 import Kaxvkaam from './Kaxvkaam/Kaxvkaam';
-import {Box,Button,Container,Paper,AppBar,Toolbar, Typography, Grid, CircularProgress} from '@mui/material'
-import {useStyles2} from '../styles/useCustomUseStyle'
+import {Box,Button,Container,Paper,AppBar,Toolbar, Typography, Grid, CircularProgress} from '@mui/material';
+import {useStyles2} from '../styles/useCustomUseStyle';
 import axios from 'axios';
-import {images} from '../utils/objAukin'
-
+import {images} from '../utils/objAukin';
+import Backdrop from '@mui/material/Backdrop';
 
 
 
 function Ruka() {
 
-
+    const handleClose = () => {
+        setTaZugu(false);
+      };
 
   const classes = useStyles2();
   
@@ -23,6 +25,7 @@ function Ruka() {
   const [loadingMetadata, setLoadingMetadata] =useState(true)
   const [mapuzugun, setMapuzugun] = useState(true)
   const [thisZugun, setThisZugun] = useState(null)
+  const [taZugu, setTaZugu] = useState(true)
   const welualChem = (i)=>{
     var zullin = [false,false,false,false]
     zullin[i] = true
@@ -66,8 +69,33 @@ function Ruka() {
   
 
   return (<>
+  <Backdrop
+  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+  open={taZugu}
+    >
+        <Grid container sx={{display:'flex',alignContent:'center',justifyContent:'center', backgroundColor:'yellow', borderColor: 'black', borderWidth: '10px', borderStyle:'solid', color:'black' }} spacing={3} padding={2} marginTop={3} marginBottom={3} >
+            <Grid item xs={12} sm={12} md={12} lg={12}> 
+                <Typography variant='h4' align='center' >
+                    Petu küzawküleiñ tüfachi App mu fey mu welulkaleafui. 
+                </Typography>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12}> 
+                <Typography variant='h4' align='center' >
+                    Todavía estamos trabajando en esta App así que podría contener errores.
+                </Typography>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12} sx={{alignContent:'center', justifyContent:'center'}} > 
+                <Typography variant='h3' align='center' >
+                    <Button  variant='contained' sx={{ backgroundColor:'black'}} onClick={handleClose}> Nürüfam / Cerrar </Button>
+                </Typography>
+                
+            </Grid>
+        </Grid>
+    </Backdrop>       
     {zugunMW!== null?
     <Container className={classes.folilRuka}  maxWidth={false}  disableGutters>
+        
+  
             <AppBar position="static" sx={{width:'100%'}}>
                 <Box sx={{display:'flex',width:'100%',alignContent:'center',justifyContent:'center',paddingTop:2}}>
                     <Grid container>
@@ -157,7 +185,7 @@ function Ruka() {
 
 
                 </Box>
-            
+                
     </Container>:<Container sx={{width:'100%',height:'100%',display:'flex',justifyContent:'center'}}><CircularProgress/></Container>}
     
     </>
